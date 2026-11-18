@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+      <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>House 85 – Fries and Burger</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0c0b;--card:#111513;--line:#8dc63f;--lime:#8dc63f;--yel:#d7e02a;--txt:#f1f3ee;--mut:#9aa39a;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:Outfit,system-ui,sans-serif;line-height:1.45;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+radial-gradient(1.5px 1.5px at 12% 20%,#fff9,transparent),radial-gradient(1px 1px at 80% 12%,#fff8,transparent),radial-gradient(1.5px 1.5px at 65% 60%,#d7e02a99,transparent),radial-gradient(1px 1px at 30% 75%,#fff7,transparent),radial-gradient(1px 1px at 90% 85%,#fff8,transparent),radial-gradient(1.5px 1.5px at 45% 40%,#fff6,transparent);animation:tw 5s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.4}to{opacity:1}}
+h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:.02em;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yel);outline-offset:2px}
+header{position:sticky;top:0;z-index:30;background:#0a0c0bee;backdrop-filter:blur(8px);border-bottom:1px solid #8dc63f44;display:flex;align-items:center;gap:12px;padding:8px 16px}
+header img{width:44px;height:44px;border-radius:50%}
+header nav{margin-left:auto;display:flex;gap:18px;font-weight:600}
+header nav a{text-decoration:none;color:var(--mut)}header nav a:hover{color:var(--lime)}
+.cartbtn{background:var(--lime);color:#0a0c0b;border:0;border-radius:999px;padding:9px 16px;font:700 .95rem Outfit,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center}
+.cartbtn b{background:#0a0c0b;color:var(--yel);border-radius:999px;min-width:22px;text-align:center;padding:0 6px}
+.bump{animation:bump .4s}@keyframes bump{50%{transform:scale(1.18)}}
+.hero{text-align:center;padding:40px 16px 28px;position:relative;overflow:hidden}
+.scene{position:relative;width:min(300px,72vw);margin:0 auto}
+.scene img{width:100%;border-radius:50%;display:block;position:relative;z-index:2;animation:float 5s ease-in-out infinite;box-shadow:0 0 60px #8dc63f55}
+@keyframes float{50%{transform:translateY(-10px) rotate(-1.5deg)}}
+.ufo{position:absolute;top:-34px;left:-10%;width:72px;z-index:3;animation:fly 9s ease-in-out infinite}
+@keyframes fly{0%,100%{transform:translateX(0) rotate(-6deg)}50%{transform:translateX(calc(min(300px,72vw)*1.05)) rotate(6deg)}}
+.hero h1{font-size:clamp(2rem,7vw,3.6rem);margin-top:22px;animation:rise .9s .1s both}
+.hero p{color:var(--mut);max-width:46ch;margin:8px auto 20px;animation:rise .9s .3s both}
+.hero .cta{animation:rise .9s .5s both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+.btn{display:inline-block;background:var(--lime);color:#0a0c0b;font:700 1rem Outfit,sans-serif;border:0;border-radius:10px;padding:12px 22px;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:var(--yel)}
+.btn.ghost{background:transparent;color:var(--txt);border:2px solid var(--lime);margin-left:8px}
+.catnav{position:sticky;top:var(--hh,61px);z-index:20;background:#0a0c0bf0;display:flex;gap:8px;overflow-x:auto;padding:10px 16px;border-bottom:1px solid #8dc63f33;scrollbar-width:none}
+.catnav a{flex:none;text-decoration:none;border:1.5px solid #8dc63f66;border-radius:999px;padding:6px 14px;font-weight:600;font-size:.92rem;transition:.2s}
+.catnav a.on,.catnav a:hover{background:var(--lime);color:#0a0c0b;border-color:var(--lime)}
+main{max-width:980px;margin:0 auto;padding:0 16px}
+.cat{margin:34px 0}
+.cat h2{font-size:clamp(1.8rem,5vw,2.6rem);text-align:center;margin-bottom:6px}
+.cat .note{text-align:center;color:var(--mut);margin:0 0 14px;font-size:.92rem}
+.box{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:6px 16px;box-shadow:0 0 28px #8dc63f22}
+.item{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center;padding:14px 0;border-bottom:1px dashed #8dc63f44}
+.item:last-child{border:0}
+.item h3{font-family:Outfit,sans-serif;font-weight:700;font-size:1.05rem}
+.item h3::before{content:"👽";font-size:.8rem;margin-right:7px}
+.item small{display:block;color:var(--mut);font-size:.85rem;margin-top:2px}
+.opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{background:#0a0c0b;border:1.5px solid #8dc63f66;color:var(--txt);border-radius:8px;padding:5px 10px;font:600 .85rem Outfit,sans-serif;cursor:pointer;transition:.15s}
+.chip.on{background:var(--yel);color:#0a0c0b;border-color:var(--yel)}
+select{background:#0a0c0b;color:var(--txt);border:1.5px solid #8dc63f66;border-radius:8px;padding:5px 8px;font:600 .85rem Outfit,sans-serif}
+.add{background:var(--lime);color:#0a0c0b;border:0;border-radius:10px;padding:10px 14px;font:700 .95rem Outfit,sans-serif;cursor:pointer;white-space:nowrap;transition:transform .15s}
+.add:hover{background:var(--yel)}.add:active{transform:scale(.92)}
+.add .pr{display:block;font-size:.8rem;font-weight:600;opacity:.85}
+.section{margin:56px 0}
+.section h2{text-align:center;font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:14px}
+.stars{display:flex;justify-content:center;gap:6px;margin:12px 0}
+.stars button{background:none;border:0;font-size:2.4rem;color:#3a403a;cursor:pointer;transition:transform .15s,color .15s;padding:0}
+.stars button.on{color:var(--yel)}.stars button:hover{transform:scale(1.2) rotate(8deg)}
+textarea,input{width:100%;background:#0a0c0b;color:var(--txt);border:1.5px solid #8dc63f66;border-radius:10px;padding:10px;font:1rem Outfit,sans-serif;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.tile{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+.tile h3{font-size:1.4rem;margin-bottom:6px}.tile p{color:var(--mut);margin:0 0 14px}
+.soc{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.soc a{border:1.5px solid var(--lime);border-radius:999px;padding:7px 14px;text-decoration:none;font-weight:600}.soc a:hover{background:var(--lime);color:#0a0c0b}
+footer{text-align:center;color:var(--mut);padding:30px 16px 90px;border-top:1px solid #8dc63f33}
+#ov{position:fixed;inset:0;background:#000a;opacity:0;pointer-events:none;transition:.3s;z-index:40}
+#ov.on{opacity:1;pointer-events:auto}
+#cart{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#0d100e;border-left:2px solid var(--lime);z-index:50;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+#cart.on{transform:none}
+#cart .hd{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #8dc63f44}
+#cart .hd h2{font-size:1.7rem}
+#cart .x{background:none;border:0;color:var(--txt);font-size:1.8rem;cursor:pointer}
+#lines{flex:1;overflow-y:auto;padding:8px 16px}
+.ln{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:10px 0;border-bottom:1px dashed #8dc63f33;animation:rise .3s}
+.ln small{color:var(--mut)}
+.q{display:flex;align-items:center;gap:8px}
+.q button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--lime);background:none;color:var(--txt);font-size:1rem;cursor:pointer}
+.empty{text-align:center;color:var(--mut);padding:40px 10px}
+.ft{padding:12px 16px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid #8dc63f44}
+.ft .tot{display:flex;justify-content:space-between;font:1.5rem Anton,sans-serif;margin-bottom:6px}
+.ft .row{display:flex;gap:8px}.ft .row>*{flex:1}
+.ft .btn{width:100%;margin-top:10px;background:#25d366;text-align:center}
+.ft .btn:disabled{opacity:.4;cursor:not-allowed}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--yel);color:#0a0c0b;font-weight:700;padding:10px 18px;border-radius:999px;transition:transform .3s;z-index:60;white-space:nowrap}
+#toast.on{transform:translate(-50%,0)}
+@media(max-width:600px){header nav{display:none}header .cartbtn{margin-left:auto}.btn.ghost{margin:10px 0 0}.item{grid-template-columns:1fr}.add{width:100%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.catnav{justify-content:safe center}
+.catnav a{animation:pop .5s backwards;animation-delay:calc(var(--i)*70ms);transition:.2s}
+.catnav a:hover{transform:translateY(-2px)}
+@keyframes pop{from{opacity:0;transform:scale(.6) translateY(10px)}}
+.cat h2::after{content:"";display:block;height:3px;width:0;margin:6px auto 0;background:linear-gradient(90deg,var(--lime),var(--yel));border-radius:3px;transition:width .7s .2s}
+.cat.in h2{animation:pop .6s both}.cat.in h2::after{width:90px}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:center;max-width:1100px;margin:0 auto;padding:36px 16px 28px;text-align:left}
+.hero p{margin:8px 0 20px;max-width:46ch}
+.brand{display:flex;align-items:center;gap:16px;position:relative;padding-top:26px}
+.hlogo{width:clamp(96px,22vw,150px);border-radius:50%;animation:float 5s ease-in-out infinite,glow 3s ease-in-out infinite alternate}
+@keyframes glow{from{box-shadow:0 0 16px #8dc63f44}to{box-shadow:0 0 54px #8dc63fcc}}
+.bn{display:flex;flex-direction:column;line-height:.92;font-family:Anton,Impact,sans-serif}
+.bn .g{font-size:clamp(2.6rem,8vw,4.6rem);color:#b4b8b2;font-style:italic;letter-spacing:.04em}
+.bn .n{font-size:clamp(3rem,9.5vw,5.4rem);color:#9dff1f;text-shadow:0 0 14px #9dff1faa,0 0 34px #9dff1f66;animation:neon 2.4s ease-in-out infinite alternate}
+@keyframes neon{from{opacity:.8;text-shadow:0 0 6px #9dff1f66}to{opacity:1;text-shadow:0 0 16px #9dff1fcc,0 0 42px #9dff1f88}}
+.ufo{animation:fly2 8s ease-in-out infinite;top:-4px;left:0;width:56px}
+@keyframes fly2{0%,100%{transform:translateX(0) rotate(-6deg)}50%{transform:translateX(230px) rotate(6deg)}}
+.car{position:relative;aspect-ratio:1/1;width:100%;max-width:520px;margin:0 auto;border:2px solid var(--lime);border-radius:18px;background:#050706;overflow:hidden;box-shadow:0 0 34px #8dc63f33}
+.car img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:scale(1.04);transition:opacity .9s,transform 6s linear}
+.car img.on{opacity:1;transform:scale(1)}
+.cb{position:absolute;top:50%;transform:translateY(-50%);background:#0a0c0bcc;color:var(--txt);border:1.5px solid var(--lime);width:38px;height:38px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2}
+.cb:hover{background:var(--lime);color:#0a0c0b}.prev{left:8px}.next{right:8px}
+.dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:7px;z-index:2}
+.dots i{width:9px;height:9px;border-radius:9px;background:#fff6;cursor:pointer;transition:.3s}.dots i.on{background:var(--yel);width:24px}
+header img{transition:transform .6s;animation:wob 6s ease-in-out infinite}
+header a:hover img{animation:spin .8s}
+@keyframes wob{0%,86%,100%{transform:none}90%{transform:rotate(-14deg) scale(1.08)}94%{transform:rotate(12deg) scale(1.08)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+#cart:not(.on){visibility:hidden;transition:transform .35s,visibility 0s .35s}
+.dots i{position:relative}.dots i::after{content:"";position:absolute;inset:-12px -4px}
+.q button{width:36px;height:36px}
+body.lock{overflow:hidden}
+.flogo{width:64px;border-radius:50%;display:block;margin:0 auto 10px;animation:spin 14s linear infinite}
+.tile{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s,box-shadow .3s}
+.show .tile{opacity:1;transform:none}.show .tile:nth-child(2){transition-delay:.15s}.show .tile:nth-child(3){transition-delay:.3s}
+.show .tile:hover{transform:translateY(-6px);box-shadow:0 0 34px #8dc63f55}
+.ic{font-size:2.3rem;animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.pulse{animation:pls 2s infinite}
+@keyframes pls{0%{box-shadow:0 0 0 0 #25d36699}70%{box-shadow:0 0 0 14px #25d36600}100%{box-shadow:0 0 0 0 #25d36600}}
+.soc a{width:50px;height:50px;padding:0;display:grid;place-items:center;transition:transform .25s,background .25s}
+.soc a:hover{transform:translateY(-4px) rotate(-8deg) scale(1.12)}
+.soc svg{width:24px;height:24px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center}.brand{justify-content:center}.hero p{margin:8px auto 20px}.ufo{animation-name:fly2m}}
+@keyframes fly2m{0%,100%{transform:translateX(0) rotate(-6deg)}50%{transform:translateX(min(60vw,230px)) rotate(6deg)}}
+
+        .wa-float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:45;width:clamp(54px,6vw,72px);aspect-ratio:1/1;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;text-decoration:none;box-shadow:0 10px 25px -5px #25d366aa;animation:waBounce 2.2s ease-in-out infinite}
+.wa-float svg{width:56%;height:56%}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:waRing 2.2s ease-out infinite;pointer-events:none}
+.wa-float:hover,.wa-float:focus-visible{animation:none;transform:scale(1.1);background:#1ebe5a}
+.wa-tip{position:absolute;right:calc(100% + 12px);background:#0a0c0b;color:#f1f3ee;border:1.5px solid #8dc63f;font:600 .85rem Outfit,sans-serif;padding:7px 12px;border-radius:12px;white-space:nowrap;opacity:0;transform:translateX(8px);transition:.25s;pointer-events:none}
+.wa-float:hover .wa-tip{opacity:1;transform:none}
+body.lock .wa-float{display:none}
+@keyframes waBounce{0%,55%,100%{transform:translateY(0)}64%{transform:translateY(-18px)}73%{transform:translateY(0)}81%{transform:translateY(-8px)}89%{transform:translateY(0)}}
+@keyframes waRing{0%,55%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+@media(hover:none){.wa-tip{display:none}}
+</style>
+</head>
+<body>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+<a class="wa-float" href="https://wa.me/573222225002?text=Hola%20House%2085%2C%20quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="wa-tip">¡Escríbenos al 322 222 5002!</span></a>
+
+<header>
+<a href="#top"><img src="logo.jpg" alt="Logo House 85"></a>
+    <nav><a href="#menu">Menú</a><a href="#opinar">Opina</a><a href="#contacto">Contacto</a></nav>
+    <button class="cartbtn" id="openCart" aria-label="Abrir carrito">🛒 Carrito <b id="cnt">0</b></button>
+</header>
+
+
+
+
+<section class="hero" id="top">
+<div class="hl">
+<div class="brand"><svg class="ufo" viewBox="0 0 80 50" aria-hidden="true"><ellipse cx="40" cy="30" rx="38" ry="13" fill="#8dc63f"/><ellipse cx="40" cy="22" rx="17" ry="14" fill="#d7e02a" opacity=".85"/><circle cx="18" cy="31" r="3" fill="#0a0c0b"/><circle cx="40" cy="34" r="3" fill="#0a0c0b"/><circle cx="62" cy="31" r="3" fill="#0a0c0b"/></svg>
+<img class="hlogo" src="logo.jpg" alt="Logo House 85"><div class="bn"><span class="g">HOUSE</span><span class="n">85</span></div></div>
+<h1>Hamburguesas de otro planeta</h1>
+<p>Hot dogs, alitas, pizzas, arepas y más. Arma tu pedido y lo recibimos directo por WhatsApp.</p>
+<div class="cta"><a class="btn" href="#menu">Ver el menú</a><a class="btn ghost" href="#contacto">Cómo llegar</a></div>
+</div>
+<div class="car" id="car" aria-label="Galería de platos"><img class="on" src="logo.jpg"Logo House 85"><img class="" src="perro.jpg" alt="Hot dog gratinado"><img class="" src="hamburguesa.jpg" alt="Hamburguesa House 85"><img class="" src="salchipapa.jpg" alt="Salchipapa con chorizo"><img class="" src="alas.jpg" alt="Alitas BBQ y miel mostaza"><img class="" src="arepa.jpg" alt="Arepa rellena"><img class="" src="pizza.jpg" alt="Pizza House"><img class="" src="manjares.jpg" alt="Costillas BBQ y pasta"><img class="" src="bebidas.jpg" alt="Bebidas y malteadas">
+<button class="cb prev" aria-label="Anterior">‹</button><button class="cb next" aria-label="Siguiente">›</button><div class="dots"></div></div>
+</section>
+
+<nav class="catnav" id="catnav" aria-label="Categorías"></nav>
+<main id="menu"></main>
+
+<main>
+<section class="section" id="opinar">
+<h2>Cuéntanos tu experiencia</h2>
+<div class="box" style="padding:20px;max-width:560px;margin:auto;text-align:center">
+<div>¿Cómo te fue en House 85?</div>
+<div class="stars" id="stars"></div>
+<textarea id="rv" rows="4" placeholder="Escribe tu opinión aquí…"></textarea>
+<button class="btn" id="rvBtn" style="margin-top:14px">Publicar en Google</button>
+<p style="color:var(--mut);font-size:.85rem;margin:10px 0 0">Copiamos tu comentario y te llevamos a Google para publicarlo con tu cuenta. Solo pegas y listo.</p>
+</div>
+</section>
+
+<section class="section" id="contacto">
+<h2>Contacto</h2>
+<div class="grid" id="cg">
+<div class="tile"><div class="ic">📍</div><h3>Ubicación</h3><p>Cra. 6 Este #98-85<br>Chapinero, Bogotá</p><a class="btn" id="mapA" target="_blank" rel="noopener">Cómo llegar</a></div>
+<div class="tile"><div class="ic">💬</div><h3>WhatsApp</h3><p>Pedidos y preguntas<br>3222225002</p><a class="btn pulse" id="waA" target="_blank" rel="noopener" style="background:#25d366">Escríbenos</a></div>
+<div class="tile"><div class="ic">✨</div><h3>Redes sociales</h3><p>Síguenos para ver novedades</p><div class="soc" id="soc"></div></div>
+</div>
+</section>
+</main>
+<footer><img class="flogo" src="logo.jpg" alt="Logo House 85">House 85 · Fries and Burger · Desde 2020 · Chapinero, Bogotá</footer>
+
+<div id="ov"></div>
+<aside id="cart" aria-label="Carrito de compras">
+<div class="hd"><h2>Tu pedido</h2><button class="x" id="closeCart" aria-label="Cerrar">×</button></div>
+<div id="lines"></div>
+<div class="ft">
+<div class="tot"><span>Total</span><span id="tot">$0</span></div>
+<div class="row"><input id="nm" placeholder="Tu nombre"><select id="tp"><option>Domicilio</option><option>Recoger</option><option>En el local</option></select></div>
+<input id="ad" placeholder="Dirección (si es domicilio)">
+<input id="nt" placeholder="Notas: sin cebolla, salsa, etc.">
+<button class="btn" id="send" disabled>Enviar pedido por WhatsApp</button>
+</div>
+</aside>
+<div id="toast"></div>
+
+<script>
+const PHONE="573222225002";
+const MAPS="https://www.google.com/maps/place/House+85/@4.6701856,-74.0234246,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f91004952de8b:0x6a718a82175a6df9!8m2!3d4.6701856!4d-74.0208443!16s%2Fg%2F11lp6bl2sn?entry=ttu&g_ep=EgoyMDI2MTExNS4wIKXMDSoASAFQAw%3D%3D";
+// Cambia por el enlace directo de reseñas de tu ficha de Google (g.page/r/…/review) cuando lo tengas
+const REVIEW="https://www.google.com/maps/search/?api=1&query=House+85+Cra.+6+Este+98-85+Bogot%C3%A1";
+const SOCIAL=[["Instagram","https://www.instagram.com/house_85_?utm_source=qr&dlrf=MWVvbHJnejZraW90MQ=="],["Facebook","https://www.facebook.com/share/1EGeu1QW4q/"],["TikTok","https://www.tiktok.com/@house_8578?_r=1&_t=ZS-9BPbiMULDWe"]];
+
+const S=(n,d,a,b)=>({n,d,v:[["Sola",a],["Combo",b]]});
+const O=(n,d,p,x)=>({n,d,v:[["",p]],x});
+const SZ=["Personal","Mediana","Grande"],T=[22000,28000,42000],E=[24000,31000,45000];
+const PZ=(n,p)=>({n,d:p==T?"Tradicional":"Especial",v:SZ.map((s,i)=>[s,p[i]])});
+const SAL=["BBQ clásica","Miel mostaza","Parmesana","BBQ picante"];
+
+const CATS=[
+
+{id:"hot",t:"Hot Dogs",i:[
+S("Hot Dog Sencillo","Salchicha americana, pan artesanal de perro, maíz, cebolla, queso gratinado, ripio, huevo de codorniz y salsas.",12000,17000),
+S("Hot Dog Especial","Hot dog sencillo con tocineta y elección de carne o pollo desmechado.",16000,19000),
+S("Hot Dog 360","Salchicha americana, pan artesanal, queso, tocineta, doble huevo de codorniz, ripio, salsas, carne y pollo.",21000,23000)]},
+
+{id:"ham",t:"Hamburguesas",i:[
+S("Hamburguesa Sencilla Res","125 g de carne de res, pan artesanal, tocineta, queso, salsa de la casa y vegetales.",18500,23000),
+S("Hamburguesa Sencilla Pollo","Filete de pechuga, pan artesanal, tocineta, queso, salsa de la casa y vegetales.",19000,23000),
+S("Hamburguesa Doble Carne","Doble carne (250 g), pan artesanal, tocineta, queso, salsa de la casa y vegetales.",23000,27000),
+S("Hamburguesa Doble Pollo","Doble filete de pechuga, pan artesanal, tocineta, queso, salsa de la casa y vegetales.",24000,28000),
+S("Hamburguesa Mixta","Filete de pollo y carne de res, pan artesanal, tocineta, queso, salsa de la casa y vegetales.",24000,28000),
+S("Hamburguesa Pollo y Champiñones","Filete de pechuga en salsa de champiñones, pan artesanal, tocineta, queso y vegetales.",23000,27000),
+S("Hamburguesa House 85","Doble carne, filete de pollo, chorizo santandereano, pan artesanal, tocineta, queso, salsa de la casa y vegetales.",30000,34000),
+S("Hamburguesa Especial","Carne y pollo desmechado, pan artesanal, tocineta, queso, salsa de la casa y vegetales.",23000,27000),
+S("Hamburguesa Chicharrón","Panceta de cerdo crujiente, pan artesanal, queso, salsa de la casa y vegetales.",24000,28000),
+S("Hamburguesa Quillera","Carne de res, queso costeño, plátano maduro, pan artesanal, salsa de la casa y vegetales.",23000,27000)]},
+
+{id:"ali",t:"Alitas",n:"Incluyen papa criolla o francesa. Escoge tu salsa.",i:[
+{n:"8 piezas de alas",d:"+ papa criolla o francesa",v:[["",23000]],x:SAL},
+{n:"12 piezas de alas",d:"+ papa criolla o francesa",v:[["",28000]],x:SAL},
+{n:"16 piezas de alas",d:"+ papa criolla o francesa",v:[["",33000]],x:SAL}]},
+
+{id:"piz",t:"Pizza House",n:"Elige el tamaño de cada pizza.",i:[
+...["Pollo y champiñón","Hawaiana","Tocineta y maíz","Mexicana","Pollo teriyaki","Pollo BBQ","Margarita","Americana"].map(n=>PZ("Pizza "+n,T)),
+...["Pollo - tocineta","Carnívora","Carne endiablada","Pepperoni","3 quesos","Costillas BBQ y maíz","New Yorker","Carbonara"].map(n=>PZ("Pizza "+n,E))]},
+
+{id:"las",t:"Lasañas",i:[O("Lasaña solo carne","",19000),O("Lasaña solo pollo","",19000),O("Lasaña mixta","",22000)]},
+
+{id:"man",t:"Manjares",i:[
+O("House Costillas BBQ","",23000),O("Tostón de plátano","",20000),O("Papa francesa o criolla con chorizo","",8500),
+O("Pasta Alfredo con pollo y tocineta","",21000),O("Pasta boloñesa","",21000),O("Pasta ranchera","",21000),
+O("Pasta con pollo y champiñones","",21000),O("Mazorcada","",21000),O("Picada familiar","",61000)]},
+
+{id:"cor",t:"Cortes",n:"300 g, acompañados con papa criolla o francesa, arroz o ensalada.",i:[
+O("Pechuga gratinada","",26000),O("Pechuga en salsa de champiñones","",27000),O("Pechuga hawaiana","",26000),
+O("Baby beef","",28000),O("Churrasco","",25000),O("Punta de anca","",29000),O("Costillas de cerdo","",29000)]},
+
+{id:"sal",t:"Salchipapas",i:[O("Salchipapa sencilla","",11000),O("Salchipapa doble","",18000),O("Salchipapa especial","",26000),O("Salchipapa House 85","",33000),O("Salchiburger","",26000)]},
+
+{id:"are",t:"Arepas",i:[O("Arepa con chorizo","",7500),O("Arepa jamón y queso","",6000),O("Arepa mixta","",10000),O("Arepa especial","",13000),O("Arepaburguer","",17000),O("Arepas burguer mixta","",22000),O("House arepa burger doble","",21000)]},
+
+{id:"beb",t:"Bebidas",i:[O("Gaseosa Coca-Cola 237 ml","",2500),O("Gaseosa Coca-Cola 350 ml","",3500),O("Gaseosa 1.5 L","",6000),O("Jugo Hit 1 L","",6000),O("Jugo Hit personal","",3000),O("Agua mineral","",3000),O("Cerveza Águila","",4000),O("Cerveza Poker","",4000),O("Coronita","",5000),O("Refajo personal","",7000),O("Refajo 1.5 L","",14000),O("Michelada","",14500)]}
+];
+
+const $=s=>document.querySelector(s),f=n=>"$"+n.toLocaleString("es-CO");
+function openUrl(u){const a=document.createElement("a");a.href=u;a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()}
+const sel={},cart=[];
+$("#mapA").href=MAPS;$("#waA").href="https://wa.me/"+PHONE;
+const IC={"Instagram": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/><circle cx=\"17.5\" cy=\"6.5\" r=\"1\" fill=\"currentColor\"/></svg>", "Facebook": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z\"/></svg>", "TikTok": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.8 5.8 0 1 0 5 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.3-1.5z\"/></svg>"};
+$("#soc").innerHTML=SOCIAL.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener" aria-label="${n}">${IC[n]}</a>`).join("");
+
+$("#catnav").innerHTML=CATS.map((c,i)=>`<a style="--i:${i}" href="#${c.id}">${c.t}</a>`).join("");
+$("#menu").innerHTML=CATS.map((c,ci)=>`<section class="cat" id="${c.id}"><h2>${c.t}</h2>${c.n?`<p class="note">${c.n}</p>`:""}<div class="box">${c.i.map((it,ii)=>{
+const k=ci+"-"+ii;sel[k]={v:0,x:0};
+return `<div class="item" data-k="${k}"><div><h3>${it.n}</h3>${it.d?`<small>${it.d}</small>`:""}
+<div class="opts">${it.v.length>1?it.v.map((v,vi)=>`<button class="chip${vi?"":" on"}" data-vi="${vi}">${v[0]} ${f(v[1])}</button>`).join(""):""}
+${it.x?`<select aria-label="Salsa">${it.x.map(x=>`<option>${x}</option>`).join("")}</select>`:""}</div></div>
+<button class="add"><span>Agregar</span><span class="pr">${f(it.v[0][1])}</span></button></div>`}).join("")}</div></section>`).join("");
+
+
+$("#menu").addEventListener("click",e=>{
+const row=e.target.closest(".item");if(!row)return;
+const [ci,ii]=row.dataset.k.split("-").map(Number),it=CATS[ci].i[ii],s=sel[row.dataset.k];
+const chip=e.target.closest(".chip");
+if(chip){s.v=+chip.dataset.vi;row.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on",c===chip));row.querySelector(".pr").textContent=f(it.v[s.v][1]);return}
+if(e.target.closest(".add")){
+const sx=row.querySelector("select"),v=it.v[s.v],extra=sx?sx.value:"";
+const label=[v[0],extra].filter(Boolean).join(" · ");
+const key=it.n+"|"+label,ex=cart.find(l=>l.key===key);
+ex?ex.q++:cart.push({key,n:it.n,l:label,p:v[1],q:1});
+draw();toast(it.n+" agregado 👽");
+const b=$("#openCart");b.classList.remove("bump");void b.offsetWidth;b.classList.add("bump")}});
+
+function draw(){
+const n=cart.reduce((a,l)=>a+l.q,0),t=cart.reduce((a,l)=>a+l.q*l.p,0);
+$("#cnt").textContent=n;$("#tot").textContent=f(t);$("#send").disabled=!n;
+$("#lines").innerHTML=cart.length?cart.map((l,i)=>`<div class="ln"><div><b>${l.n}</b>${l.l?`<small><br>${l.l}</small>`:""}</div><div>${f(l.p*l.q)}</div>
+<div class="q"><button data-i="${i}" data-d="-1" aria-label="Quitar uno">−</button>${l.q}<button data-i="${i}" data-d="1" aria-label="Agregar uno">+</button></div></div>`).join(""):`<div class="empty">Tu carrito está vacío.<br>Agrega algo rico del menú 🍔</div>`}
+$("#lines").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+const l=cart[b.dataset.i];l.q+=+b.dataset.d;if(l.q<1)cart.splice(b.dataset.i,1);draw()});
+const open=o=>{$("#cart").classList.toggle("on",o);$("#ov").classList.toggle("on",o);document.body.classList.toggle("lock",o)};addEventListener("keydown",e=>{if(e.key==="Escape")open(false)});
+$("#openCart").onclick=()=>open(true);$("#closeCart").onclick=$("#ov").onclick=()=>open(false);
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),1600)}
+
+$("#send").onclick=()=>{
+const t=cart.reduce((a,l)=>a+l.q*l.p,0),tp=$("#tp").value;
+let m="Hola House 85 👽, quiero hacer este pedido:\n\n"+cart.map(l=>`• ${l.q}x ${l.n}${l.l?" ("+l.l+")":""} – ${f(l.p*l.q)}`).join("\n")+`\n\n*Total: ${f(t)}*\nTipo: ${tp}`;
+if($("#nm").value)m+="\nNombre: "+$("#nm").value;
+if($("#ad").value&&tp==="Domicilio")m+="\nDirección: "+$("#ad").value;
+if($("#nt").value)m+="\nNotas: "+$("#nt").value;
+openUrl("https://wa.me/"+PHONE+"?text="+encodeURIComponent(m))};
+
+let rate=0;
+$("#stars").innerHTML=[1,2,3,4,5].map(n=>`<button aria-label="${n} estrellas" data-n="${n}">★</button>`).join("");
+$("#stars").onclick=e=>{const b=e.target.closest("button");if(!b)return;rate=+b.dataset.n;
+[...$("#stars").children].forEach((s,i)=>s.classList.toggle("on",i<rate))};
+$("#rvBtn").onclick=()=>{
+if(!rate){toast("Elige tus estrellas primero ⭐");return}
+const txt=$("#rv").value.trim();
+if(txt){try{const r=$("#rv");r.select();document.execCommand("copy");r.setSelectionRange(0,0)}catch(e){}try{navigator.clipboard.writeText(txt).catch(()=>{})}catch(e){}}
+toast(txt?"Comentario copiado. Pégalo en Google":"Te llevamos a Google");
+openUrl(REVIEW)};
+
+const links=[...document.querySelectorAll(".catnav a")];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");if(!lock)chip(e.target.id)}}),{rootMargin:"-40% 0px -55% 0px"});
+document.querySelectorAll(".cat").forEach(s=>io.observe(s));
+const sl=[...document.querySelectorAll("#car img")],dt=$(".dots");let ci=0,tm;
+dt.innerHTML=sl.map((_,i)=>`<i data-i="${i}"></i>`).join("");
+function go(i){ci=(i+sl.length)%sl.length;sl.forEach((x,j)=>x.classList.toggle("on",j===ci));[...dt.children].forEach((d,j)=>d.classList.toggle("on",j===ci));clearInterval(tm);tm=setInterval(()=>go(ci+1),6000)}
+$(".prev").onclick=()=>go(ci-1);$(".next").onclick=()=>go(ci+1);dt.onclick=e=>{if(e.target.dataset.i)go(+e.target.dataset.i)};go(0);
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");o.unobserve(e.target)}}),{threshold:.2}).observe($("#cg"));
+const hh=()=>$("header").offsetHeight,cn=$("#catnav");let lock=0;
+function setH(){document.documentElement.style.setProperty("--hh",hh()+"px")}setH();addEventListener("resize",setH);
+function chip(id){links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+id));const a=cn.querySelector(".on");if(a&&cn.scrollWidth>cn.clientWidth)cn.scrollTo({left:a.offsetLeft-(cn.clientWidth-a.offsetWidth)/2,behavior:"smooth"})}
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;
+const id=a.getAttribute("href").slice(1),t=id==="top"?document.body:document.getElementById(id);if(!t)return;e.preventDefault();
+const cat=t.classList.contains("cat"),y=id==="top"?0:t.getBoundingClientRect().top+scrollY-hh()-(cat?cn.offsetHeight:0)-8;
+if(cat){lock=1;chip(id);clearTimeout(chip.t);chip.t=setTimeout(()=>lock=0,900)}
+scrollTo({top:Math.max(0,y),behavior:"smooth"})});
+let sx=0;$("#car").addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});$("#car").addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)go(ci+(d<0?1:-1))});
+draw();
+</script>
+</body>
+</html>
